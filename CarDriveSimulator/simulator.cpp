@@ -12,6 +12,7 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <limits>
 #include "Car.h"
 
 
@@ -119,14 +120,40 @@ void createNewCar(Car **cars) {
 
 		std::cout << "Bitte geben Sie die Automarke an:" << std::endl;
 		std::cin >> brand;
+		std::cout << "Input is: " << brand << std::endl;
 		std::cout << "Bitte geben Sie das Modell an:" << std::endl;
 		std::cin >> model;
+		std::cout << "Input is: " << model << std::endl;
 		std::cout << "Bitte geben Sie die Tankgroesse an:" << std::endl;
-		std::cin >> siceOfTank;
+		//std::cin >> siceOfTank;
+		while (!(std::cin >> siceOfTank))
+		{
+			std::cout << "A number must be entered" << std::endl;
+
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+		std::cout << "Input is: " << siceOfTank << " Liter." << std::endl;
 		std::cout << "Bitte geben Sie den durchschnittsverbrauach an:" << std::endl;
-		std::cin >> averageWastage;
+		//std::cin >> averageWastage;
+		while (!(std::cin >> averageWastage))
+		{
+			std::cout << "A number must be entered" << std::endl;
+
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+		std::cout << "Input is: " << averageWastage << " Liter pro 100km." << std::endl;
 		std::cout << "Bitte geben Sie die maximale Reichweite an:" << std::endl;
-		std::cin >> maxRange;
+		//std::cin >> maxRange;
+		while (!(std::cin >> maxRange))
+		{
+			std::cout << "A number must be entered" << std::endl;
+
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
+		std::cout << "Input is: " << maxRange << " km." << std::endl;
 
 		cars[CARCOUNTER] = new Car(brand, model, siceOfTank, averageWastage, maxRange);
 		CARCOUNTER++;
