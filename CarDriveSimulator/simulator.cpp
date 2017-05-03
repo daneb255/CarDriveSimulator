@@ -204,9 +204,9 @@ void deleteCars(Car **cars) {
 
 // Fügt dem Speicher ein Template von Autos hinzu
 void addDemoCars(Car **cars) {
-	if (MAXANZAHL < 5 && CARCOUNTER + 6 > MAXANZAHL)
+	if (MAXANZAHL < 6 && CARCOUNTER + 6 > MAXANZAHL)
 	{
-		std::cout << "\nFehler! Zu wenig Speicherplatz steht zur Verfügung.\nBitte reservieren Sie mehr Speicher.\nMinimum: 5 Autos!\n" << std::endl;
+		std::cout << "\nFehler! Zu wenig Speicherplatz steht zur Verfügung.\nBitte reservieren Sie mehr Speicher.\nMinimum: 6 Autos!\n" << std::endl;
 	}
 	else {
 		// Erstellen der Demo Cars
